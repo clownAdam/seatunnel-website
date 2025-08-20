@@ -82,7 +82,7 @@ import ChangeLog from '../changelog/connector-jdbc.md';
 | batch_size                                | Int     | 否       | 1000                         | 对于批量写入，当缓冲记录的数量达到“batch_size”的数量或时间达到“checkpoint.interval”<br/>时，数据将被刷新到数据库中                   |
 | is_exactly_once                           | Boolean | 否       | false                        | 是否启用精确一次语义，这将使用Xa事务。如果启用，则需要<br/>设置`xa_data_source_class_name`。                                |
 | generate_sink_sql                         | Boolean | 否       | false                        | 根据要写入的数据库表生成sql语句,当指定了参数`database`和`table`时，此参数必须设置为true                                       |
-| xa_data_source_class_name                 | String  | 否       | -                            | 数据库Driver的xa数据源类名，例如mysql是`com.mysql.cj.jdbc。MysqlXADataSource，和<br/>请参阅附录了解其他数据源              |
+| xa_data_source_class_name                 | String  | 否       | -                            | 数据库Driver的xa数据源类名，例如mysql是`com.mysql.cj.jdbc.MysqlXADataSource`，和<br/>请参阅附录了解其他数据源              |
 | max_commit_attempts                       | Int     | 否       | 3                            | 事务提交失败的重试次数                                                                                    |
 | transaction_timeout_sec                   | Int     | 否       | -1                           | 事务打开后的超时，默认值为-1（永不超时）。请注意，设置超时可能会影响＜br/＞精确一次语义                                                 |
 | auto_commit                               | Boolean | 否       | true                         | 默认情况下启用自动事务提交                                                                                  |
